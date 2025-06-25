@@ -1,0 +1,90 @@
+/* body{
+    font—family: "Plus Jakarta Sans" ,"sans—serif" !important;
+} */
+
+.navbar{
+    height: 5rem;
+    background-color: rgb(243, 241, 240);
+}
+
+.fa-compass{
+    color: brown;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: black !important; 
+}
+/* !important to override the style of bootstrap */
+
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+
+}
+
+.f_info{
+    height: 8rem;
+    display: flex;
+    background-color: rgb(243, 241, 240);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:space-evenly;
+    text-align: center;
+}
+
+.f-info-links{
+    width: 100%;
+}
+.f-info-social i {
+    font-size: 1.2rem;
+    margin-right: 1.2rem;
+}
+
+.f-info-social{
+    width: 100%;
+}
+
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+border-radius: 1rem !important;
+width: 100% !important;
+object-fit: cover!;
+}
+
+.card-body{
+    padding: 0 !important;
+
+}
+.card-text{
+    font-size: 400 !important;
+}
+
+.a{
+    text-decoration: none;
+}
+
+
+.h:hover{
+    opacity: 0.5;
+}
+.h{
+    color: red;
+}
+
+/* Map */
+#map{
+    height: 400px;
+    width:80vh;
+}
+

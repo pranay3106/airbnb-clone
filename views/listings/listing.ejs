@@ -1,0 +1,168 @@
+<% layout("/layouts/boilerplate") %>
+<!-- <%=success %> -->
+<style>
+  #filters{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+width: 70rem;
+
+  }
+  .filter{
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+  }
+
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .filter p {
+    font-size: 0.8rem;
+  }
+
+  .tax-info{
+    display: none;
+  }
+
+  .tax-toggle{
+    border:1px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: 3.1rem;
+    padding-left: 3rem;
+    margin-top: 1.1rem;
+    display: flex;
+    align-items: center;
+    margin-left: 7rem;
+  }
+
+  .card{
+    opacity: 1;
+}
+.card:hover{
+    opacity: 0.8;
+}
+</style>
+
+<body>
+    <!-- <h3>All listings</h3> -->
+    <!-- <form method="get" action="/listings/new">
+        <button>Create new listing</button>
+    </form> -->
+    <div id="filters">
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-fire"></i>
+        </div>
+        <p>Trending</p>
+      </div> 
+
+
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-bed"></i>
+        </div>
+        <p>Rooms</p>
+      </div> 
+
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-mountain-city"></i>
+        </div>
+        <p>Iconic cities</p>
+      </div> 
+
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-mountain"></i>
+        </div>
+        <p>Mountains</p>
+      </div> 
+
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-landmark-dome"></i>
+        </div>
+        <p>Castles</p>
+      </div> 
+
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-person-swimming"></i>
+        </div>
+        <p>Amazing Pools</p>
+      </div> 
+
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-campground"></i>
+        </div>
+        <p>Camping</p>
+      </div> 
+
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-cow"></i>
+        </div>
+        <p>Farms</p>
+      </div> 
+
+      <div class="filter">
+        <div> 
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <p>Arctic</p>
+      </div> 
+
+      <div class="form-check form-switch tax-toggle">
+  <input class="form-check-input tax-switch" type="checkbox" role="switch" id="switchCheckDefault">
+  <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+</div>
+    </div>
+
+
+
+    <!-- card  -->
+    <div class="row row-cols row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+      <% for(let listing of allListings) {%>
+        <a href="/listings/<%=listing.id %>" class="listing-link">
+          <div class="card col listing-card"> 
+            <img src="<%=listing.image.url%>" class="card-img-top" alt="listing img" style="height: 18rem;">
+            <div class="card-body">
+              <p class="card-text"><%=listing.title %> <br>  &#8377;<%=listing.price%> /Night
+               <i class="tax-info"> <b>+18% GST</b></i></p>
+              
+            </div>
+        
+        
+          </div>
+        </a>
+          <% } %> 
+    
+    </div>
+   
+
+</div> 
+<script>
+  let taxSwitch = document.getElementById("switchCheckDefault");
+  let taxInfo = document.getElementsByClassName("tax-info");
+
+  taxSwitch.addEventListener("click", () => {
+    for (let info of taxInfo) {
+      // Use getComputedStyle to check actual display value
+      let currentDisplay = window.getComputedStyle(info).display;
+
+      if (currentDisplay === "none") {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>
+
+</body>
