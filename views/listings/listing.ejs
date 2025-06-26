@@ -12,13 +12,19 @@ width: 70rem;
     text-align: center;
     margin-right: 2rem;
     margin-top: 2rem;
-    opacity: 0.7;
+    opacity: 1;
   }
 
   .filter:hover{
-    opacity: 1;
+    /* opacity: 1; */
+    
     cursor: pointer;
+    color: rgb(255, 0, 0);
+
   }
+
+ 
+
 
   .filter p {
     font-size: 0.8rem;
@@ -46,6 +52,23 @@ width: 70rem;
 .card:hover{
     opacity: 0.8;
 }
+
+
+
+
+.hotel-pin {
+  font-size: 30px;
+  display: inline-block;
+  animation: slideLeftRight 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes slideLeftRight {
+  0%   { transform: translateX(0); }
+  50%  { transform: translate(5px); }
+  100% { transform: translatey(0); }
+}
+
 </style>
 
 <body>
@@ -55,7 +78,7 @@ width: 70rem;
     </form> -->
     <div id="filters">
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-fire"></i>
         </div>
         <p>Trending</p>
@@ -63,56 +86,56 @@ width: 70rem;
 
 
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-bed"></i>
         </div>
         <p>Rooms</p>
       </div> 
 
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-mountain-city"></i>
         </div>
         <p>Iconic cities</p>
       </div> 
 
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-mountain"></i>
         </div>
         <p>Mountains</p>
       </div> 
 
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-landmark-dome"></i>
         </div>
         <p>Castles</p>
       </div> 
 
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-person-swimming"></i>
         </div>
         <p>Amazing Pools</p>
       </div> 
 
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-campground"></i>
         </div>
         <p>Camping</p>
       </div> 
 
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-cow"></i>
         </div>
         <p>Farms</p>
       </div> 
 
       <div class="filter">
-        <div> 
+        <div class="fa-solid-1"> 
           <i class="fa-solid fa-snowflake"></i>
         </div>
         <p>Arctic</p>
@@ -142,6 +165,10 @@ width: 70rem;
           </div>
         </a>
           <% } %> 
+
+          <div class="nav-icon hotel-pin">
+  🏨
+</div>
     
     </div>
    
@@ -163,6 +190,7 @@ width: 70rem;
       }
     }
   });
+  
 </script>
 
 </body>

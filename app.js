@@ -116,7 +116,7 @@ app.use("/listings/:id/reviews",reviewRouter)
 
 
 //if any route doesnt match
-app.all("*",(err,req,res,next)=>{
+app.all("*",(req,res,next)=>{
     next(new ExpressError(404,"Page not found"));
 })
 
